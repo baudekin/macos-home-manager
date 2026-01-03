@@ -51,6 +51,9 @@
     # Darwin version of ghostty
     pkgs.ghostty-bin
 
+    # Lazy Git
+    pkgs.lazygit
+
     # Prover
     pkgs.lean4
 
