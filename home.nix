@@ -19,6 +19,8 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.vscode
+    
     #pkgs.emacs
     # Required by Emacs 
     pkgs.cmake # vterm requires cmake to build its C module
