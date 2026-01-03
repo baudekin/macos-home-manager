@@ -20,11 +20,16 @@
   # environment.
   home.packages = [
     pkgs.vscode
+
+
+    pkgs.brave
     
     #pkgs.emacs
     # Required by Emacs 
     pkgs.cmake # vterm requires cmake to build its C module
     # pkgs.libvterm # The underlying library Not supported on MacOs
+
+    pkgs.discord
     
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -48,6 +53,9 @@
 
     # Prover
     pkgs.lean4
+
+    # Media Viewer Mocos Version
+    pkgs.vlc-bin
 
     # Install vs-code
     pkgs.vscode
