@@ -75,7 +75,6 @@
   #  /etc/profiles/per-user/bodkin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
     JULIA_EDITOR = "nvim";
     JULIA_NUM_THREADS = 8;
     VIRTUAL_ENV_DISABLE_PROMPT = 1;
@@ -89,6 +88,12 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Neovim
+  programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+  };
 
   # Emacs Pakages 
   programs.emacs = {
@@ -110,6 +115,8 @@
 
   programs.zsh = {
     enable = true;
+
+
     # Other zsh options can go here (e.g., enableCompletion, history)
     enableCompletion = true;
     history = {
@@ -123,6 +130,10 @@
       ls = "ls -G --color=auto";
     };
 
+    initContent = ''
+      bindkey -v
+    '';
+
     oh-my-zsh = {
       enable = true;
       theme = "gozilla"; # Or your preferred standard theme
@@ -134,6 +145,7 @@
       ];
       # custom = "..."; # Use this for custom themes/plugins (see step 3)
     };
+
   };
 
   # Optional: ensure your environment uses zsh
