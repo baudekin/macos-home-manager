@@ -1,2 +1,2 @@
-bindkey -v
+set -o vi
 export PATH="$HOME/.elan/bin:$PATH"
