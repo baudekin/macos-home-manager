@@ -81,6 +81,12 @@
     VIRTUAL_ENV_DISABLE_PROMPT = 1;
   };
 
+  # Add Juliaup to path. Julia requires binaries to be in particular locations
+  # This makes it hard to use Nix
+  home.sessionPath = [
+    "/Users/bodkin/.juliaup/bin"
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
