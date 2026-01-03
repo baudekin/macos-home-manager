@@ -5,6 +5,7 @@
   # manage.
   home.username = "bodkin";
   home.homeDirectory = "/Users/bodkin";
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -45,6 +46,9 @@
 
     # Prover
     pkgs.lean4
+
+    # Install vs-code
+    pkgs.vscode
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
