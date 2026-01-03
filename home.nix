@@ -40,6 +40,9 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
+    # Darwin version of ghostty
+    pkgs.ghostty-bin
+
     # Prover
     pkgs.lean4
   ];
