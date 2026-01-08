@@ -57,6 +57,9 @@
     # Prover
     pkgs.lean4
 
+    # Commandline tool
+    pkgs.readline
+
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
@@ -133,6 +136,12 @@
       (require 'vterm)
       (setq vterm-shell "/bin/sh") ; Configure the shell vterm uses
     '';
+  };
+
+# readline: https://github.com/nix-community/home-manager/blob/master/modules/programs/readline.nix
+  programs.readline = {
+    enable = true;
+    variables.editing-mode = "vi";
   };
 
 
