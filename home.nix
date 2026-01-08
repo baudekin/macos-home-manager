@@ -113,9 +113,20 @@
   programs.home-manager.enable = true;
 
   # Neovim
-  programs.neovim = {
-      enable = true;
-      defaultEditor = true;
+  #programs.neovim = {
+  #    enable = true;
+  #    defaultEditor = true;
+  #};
+  #
+  programs.nvf = {
+    enable = true;
+    settings = {
+      vim.viAlias = true;
+      vim.vimAlias = true;
+      vim.lsp = {
+        enable = true;
+      };
+    };
   };
 
   # Emacs Pakages 
