@@ -129,6 +129,8 @@
     # Add vterm to the list of extra packages managed by home-manager
     extraPackages = epkgs: with epkgs; [
       vterm
+      nix-mode
+      magit
     ];
 
     # Optional: Add any extra elisp configuration needed for vterm
