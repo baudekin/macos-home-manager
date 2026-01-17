@@ -124,8 +124,8 @@
   #};
   programs.nixvim.enable = true;
   programs.nixvim.imports = [ 
-    ./nixvim.nix 
-    ./options.nix 
+    ./modules/nixvim/default.nix 
+    ./modules/nixvim/options.nix 
    ];
 
   # Emacs Pakages 
