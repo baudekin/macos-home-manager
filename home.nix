@@ -57,6 +57,7 @@
     # Prover
     pkgs.lean4
 
+
     # Commandline tool
     pkgs.readline
 
@@ -66,6 +67,7 @@
     # Install vs-code
     pkgs.vscode
   ];
+ 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -116,9 +118,15 @@
   programs.home-manager.enable = true;
 
   # Neovim
-  programs.neovim = {
-      enable = true;
-      defaultEditor = true;
+  #programs.neovim = {
+  #    enable = true;
+  #    defaultEditor = true;
+  #};
+  programs.nixvim = {
+    enable = true;
+
+    colorschemes.catppuccin.enable = true;
+    plugins.lualine.enable = true;
   };
 
   # Emacs Pakages 
@@ -180,7 +188,10 @@
       # custom = "..."; # Use this for custom themes/plugins (see step 3)
     };
 
+
   };
+  
+  
 
   # Optional: ensure your environment uses zsh
   # home.shellAliases = { ... };
