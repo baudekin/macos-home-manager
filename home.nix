@@ -122,12 +122,8 @@
   #    enable = true;
   #    defaultEditor = true;
   #};
-  programs.nixvim = {
-    enable = true;
-
-    colorschemes.catppuccin.enable = true;
-    plugins.lualine.enable = true;
-  };
+  programs.nixvim.enable = true;
+  programs.nixvim.imports = [ ./nixvim.nix ];
 
   # Emacs Pakages 
   programs.emacs = {
