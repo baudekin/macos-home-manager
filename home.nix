@@ -123,7 +123,10 @@
   #    defaultEditor = true;
   #};
   programs.nixvim.enable = true;
-  programs.nixvim.imports = [ ./nixvim.nix ];
+  programs.nixvim.imports = [ 
+    ./nixvim.nix 
+    ./options.nix 
+   ];
 
   # Emacs Pakages 
   programs.emacs = {
