@@ -21,16 +21,15 @@
   home.packages = [
     pkgs.vscode
 
-
     pkgs.brave
-    
+
     #pkgs.emacs
-    # Required by Emacs 
+    # Required by Emacs
     pkgs.cmake # vterm requires cmake to build its C module
     # pkgs.libvterm # The underlying library Not supported on MacOs
 
     pkgs.discord
-    
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     #pkgs.hello
@@ -57,9 +56,10 @@
     # Prover
     pkgs.lean4
 
-
     # Commandline tool
     pkgs.readline
+
+    pkgs.ripgrep
 
     # Media Viewer Mocos Version
     pkgs.vlc-bin
@@ -67,7 +67,6 @@
     # Install vs-code
     pkgs.vscode
   ];
- 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -123,23 +122,34 @@
   #    defaultEditor = true;
   #};
   programs.nixvim.enable = true;
-  programs.nixvim.imports = [ 
-    ./cfg/nixvim/nixvim.nix 
-    ./cfg/nixvim/config/options.nix 
-    ./cfg/nixvim/config/keybindings.nix 
-   ];
+  programs.nixvim.imports = [
+    ./cfg/nixvim/nixvim.nix
+    ./cfg/nixvim/config/options.nix
+    ./cfg/nixvim/config/keybindings.nix
+    ./cfg/nixvim/plugins/treesitter.nix
+    ./cfg/nixvim/plugins/lsp/lsp.nix
+    ./cfg/nixvim/plugins/lsp/clangd.nix
+    ./cfg/nixvim/plugins/lsp/dap.nix
+    ./cfg/nixvim/plugins/lsp/fmtlint.nix
+    ./cfg/nixvim/plugins/lsp/leanls.nix
+    ./cfg/nixvim/plugins/lsp/lua_ls.nix
+    ./cfg/nixvim/plugins/lsp/nixd.nix
+    ./cfg/nixvim/plugins/lsp/python.nix
+    ./cfg/nixvim/plugins/lsp/texlab.nix
+  ];
 
-  # Emacs Pakages 
+  # Emacs Pakages
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;  # replace with pkgs.emacs-gtk if desireda
-    
+    package = pkgs.emacs; # replace with pkgs.emacs-gtk if desireda
+
     # Add vterm to the list of extra packages managed by home-manager
-    extraPackages = epkgs: with epkgs; [
-      vterm
-      nix-mode
-      magit
-    ];
+    extraPackages =
+      epkgs: with epkgs; [
+        vterm
+        nix-mode
+        magit
+      ];
 
     # Optional: Add any extra elisp configuration needed for vterm
     extraConfig = ''
@@ -148,21 +158,19 @@
     '';
   };
 
-# readline: https://github.com/nix-community/home-manager/blob/master/modules/programs/readline.nix
+  # readline: https://github.com/nix-community/home-manager/blob/master/modules/programs/readline.nix
   programs.readline = {
     enable = true;
     variables.editing-mode = "vi";
   };
 
-
   programs.zsh = {
     enable = true;
-
 
     # Other zsh options can go here (e.g., enableCompletion, history)
     enableCompletion = true;
     history = {
-        size = 10000;
+      size = 10000;
     };
 
     shellAliases = {
@@ -188,10 +196,7 @@
       # custom = "..."; # Use this for custom themes/plugins (see step 3)
     };
 
-
   };
-  
-  
 
   # Optional: ensure your environment uses zsh
   # home.shellAliases = { ... };
