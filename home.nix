@@ -125,7 +125,7 @@
   programs.nixvim.enable = true;
   programs.nixvim.imports = [ 
     ./cfg/nixvim/nixvim.nix 
-    ./cfg/nixvim/options.nix 
+    ./cfg/nixvim/config/options.nix 
    ];
 
   # Emacs Pakages 
