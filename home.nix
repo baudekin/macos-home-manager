@@ -19,7 +19,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.vscode
 
     pkgs.brave
 
@@ -66,6 +65,15 @@
 
     # Install vs-code
     pkgs.vscode
+
+    # Python Setup
+    (pkgs.python313.withPackages (
+      ppkgs: with ppkgs; [
+        requests
+        # Add other packages here
+        pynvim
+      ]
+    ))
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
