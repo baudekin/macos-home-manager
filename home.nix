@@ -59,6 +59,8 @@
 
     pkgs.ripgrep
 
+    pkgs.tree-sitter
+
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
@@ -134,6 +136,8 @@
     ./cfg/nixvim/config/options.nix
     ./cfg/nixvim/config/keybindings.nix
     ./cfg/nixvim/plugins/treesitter.nix
+    ./cfg/nixvim/plugins/dashboard.nix
+    ./cfg/nixvim/plugins/telescope.nix
     ./cfg/nixvim/plugins/lsp/lsp.nix
     ./cfg/nixvim/plugins/lsp/clangd.nix
     ./cfg/nixvim/plugins/lsp/dap.nix
