@@ -18,6 +18,11 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.gfortran
+    pkgs.lua51Packages.lua
+    pkgs.lua51Packages.luarocks
+    pkgs.texliveFull
+    pkgs.tmux
 
     pkgs.brave
 
