@@ -137,6 +137,7 @@
     ./cfg/nixvim/config/keybindings.nix
     ./cfg/nixvim/plugins/dashboard.nix
     ./cfg/nixvim/plugins/lazygit.nix
+    ./cfg/nixvim/plugins/harpoon.nix
     ./cfg/nixvim/plugins/misc.nix
     ./cfg/nixvim/plugins/telescope.nix
     ./cfg/nixvim/plugins/treesitter.nix
