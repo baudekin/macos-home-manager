@@ -25,6 +25,11 @@
     pkgs.texliveFull
     pkgs.tmux
 
+    # Darwin version of ghostty
+    pkgs.ghostty-bin
+    # Media Viewer Mocos Version
+    pkgs.vlc-bin
+
     pkgs.brave
 
     #pkgs.emacs
