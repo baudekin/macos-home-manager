@@ -18,6 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    # Moved from nix darwin flake.
     pkgs.gfortran
     pkgs.lua51Packages.lua
     pkgs.lua51Packages.luarocks
@@ -35,26 +36,6 @@
 
     pkgs.fd
 
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    #pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    #(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
-
-    # Darwin version of ghostty
-    pkgs.ghostty-bin
-
     # Lazy Git
     pkgs.lazygit
 
@@ -71,9 +52,6 @@
 
     pkgs.tree-sitter
 
-    # Media Viewer Mocos Version
-    pkgs.vlc-bin
-
     # Install vs-code
     pkgs.vscode
 
@@ -85,7 +63,20 @@
         pynvim
       ]
     ))
+
+    # Font setup
+    pkgs.fontconfig
+    pkgs.google-fonts
+    pkgs.noto-fonts-color-emoji
+    pkgs.zlib # workaround for #703
   ];
+
+  # Enable Fontconfig
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts.monospace = [ "Source Code Pro" ];
+  fonts.fontconfig.defaultFonts.sansSerif = [ "Open Sans" ];
+  fonts.fontconfig.defaultFonts.serif = [ "Serf" ];
+  fonts.fontconfig.defaultFonts.emoji = [ "Noto Color Emoji" ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -159,7 +150,7 @@
     ./modules/nixvim/plugins/lsp/lua_ls.nix
     ./modules/nixvim/plugins/lsp/nixd.nix
     ./modules/nixvim/plugins/lsp/python.nix
-    ./modules/nixvim/plugins/lsp/texlab.nix
+    #./modules/nixvim/plugins/lsp/texlab.nix
   ];
 
   # Emacs Pakages
