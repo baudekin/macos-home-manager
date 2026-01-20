@@ -138,8 +138,8 @@
   programs.nixvim.enable = true;
   programs.nixvim.imports = [
     ./cfg/nixvim/nixvim.nix
-    ./cfg/nixvim/config/options.nix
     ./cfg/nixvim/config/keybindings.nix
+    ./cfg/nixvim/config/options.nix
     ./cfg/nixvim/plugins/dashboard.nix
     ./cfg/nixvim/plugins/lazygit.nix
     ./cfg/nixvim/plugins/harpoon.nix
