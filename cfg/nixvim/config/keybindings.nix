@@ -21,7 +21,7 @@
       key = "<leader>td";
       options.silent = true;
       options.noremap = true;
-      action = "function() vim.diagnostic.enable(not vim.diagnostic.is_enabled() end";
+      action.__raw = "function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end";
     }
     #vim.keymap.set("n", "<leader>h", function()
     #          print("Hello from Neovim!")
@@ -29,9 +29,8 @@
     {
       mode = "n";
       key = "<leader>h";
-      options.silent = false;
       options.noremap = true;
-      action = "function() print(\" Hello keymap functino.\")  end";
+      action.__raw = "function() print(\" Hello keymap function.\")  end";
     }
 
     # Telescope Plugin
@@ -66,6 +65,43 @@
       key = "<leader>lg";
       action = "<cmd>LazyGit<CR>";
       options.silent = true;
+    }
+
+    # vim.keymap.set("n", "<leader>a", function() require("harpoon.mark").add_file() end, { desc = "Harpoon: Add file" })
+    {
+      mode = "n";
+      key = "<leader>a";
+      action.__raw = "function() require('harpoon.mark').add_file() end";
+      options.silent = false;
+      options.desc = "Harpoon: Add file";
+      options.noremap = true;
+    }
+    # vim.keymap.set("n", "<C-e>", function() require("harpoon.ui").toggle_quick_menu() end, { desc = "Harpoon: Toggle quick menu" })
+    {
+      mode = "n";
+      key = "<C-e>";
+      action.__raw = "function() require('harpoon.vi').toggle_quick_menu() end";
+      options.silent = false;
+      options.desc = "Harpoon: Toggle quick menu";
+      options.noremap = true;
+    }
+    # vim.keymap.set("n", "<C-1>", function() require("harpoon.ui").nav_file(1) end, { desc = "Harpoon: Go to file 1" })
+    {
+      mode = "n";
+      key = "<C-1>";
+      action.__raw = "function() require('harpoon.vi').nav_file(1) end";
+      options.silent = false;
+      options.desc = "Harpoon: Go to fie 1";
+      options.noremap = true;
+    }
+    # vim.keymap.set("n", "<C-1>", function() require("harpoon.ui").nav_file(2) end, { desc = "Harpoon: Go to file 2" })
+    {
+      mode = "n";
+      key = "<C-2>";
+      action.__raw = "function() require('harpoon.vi').nav_file(2) end";
+      options.silent = false;
+      options.desc = "Harpoon: Go to fie 2";
+      options.noremap = true;
     }
   ];
 }

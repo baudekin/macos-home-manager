@@ -28,6 +28,8 @@
 
     pkgs.discord
 
+    pkgs.fd
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     #pkgs.hello
@@ -53,6 +55,9 @@
 
     # Prover
     pkgs.lean4
+
+    # NodeJS
+    pkgs.nodejs
 
     # Commandline tool
     pkgs.readline
