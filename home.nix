@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -19,18 +18,23 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    pkgs.vscode
-
+    pkgs.gfortran
+    pkgs.lua51Packages.lua
+    pkgs.lua51Packages.luarocks
+    pkgs.texliveFull
+    pkgs.tmux
 
     pkgs.brave
-    
+
     #pkgs.emacs
-    # Required by Emacs 
+    # Required by Emacs
     pkgs.cmake # vterm requires cmake to build its C module
     # pkgs.libvterm # The underlying library Not supported on MacOs
 
     pkgs.discord
-    
+
+    pkgs.fd
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     #pkgs.hello
@@ -57,17 +61,31 @@
     # Prover
     pkgs.lean4
 
+    # NodeJS
+    pkgs.nodejs
 
     # Commandline tool
     pkgs.readline
+
+    pkgs.ripgrep
+
+    pkgs.tree-sitter
 
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
     # Install vs-code
     pkgs.vscode
+
+    # Python Setup
+    (pkgs.python313.withPackages (
+      ppkgs: with ppkgs; [
+        requests
+        # Add other packages here
+        pynvim
+      ]
+    ))
   ];
- 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -122,24 +140,40 @@
   #    enable = true;
   #    defaultEditor = true;
   #};
-  programs.nixvim = {
-    enable = true;
+  programs.nixvim.enable = true;
+  programs.nixvim.imports = [
+    ./modules/nixvim/nixvim.nix
+    ./modules/nixvim/config/keybindings.nix
+    ./modules/nixvim/config/options.nix
+    ./modules/nixvim/plugins/dashboard.nix
+    ./modules/nixvim/plugins/lazygit.nix
+    ./modules/nixvim/plugins/harpoon.nix
+    ./modules/nixvim/plugins/misc.nix
+    ./modules/nixvim/plugins/telescope.nix
+    ./modules/nixvim/plugins/treesitter.nix
+    ./modules/nixvim/plugins/lsp/lsp.nix
+    ./modules/nixvim/plugins/lsp/clangd.nix
+    ./modules/nixvim/plugins/lsp/dap.nix
+    ./modules/nixvim/plugins/lsp/fmtlint.nix
+    ./modules/nixvim/plugins/lsp/leanls.nix
+    ./modules/nixvim/plugins/lsp/lua_ls.nix
+    ./modules/nixvim/plugins/lsp/nixd.nix
+    ./modules/nixvim/plugins/lsp/python.nix
+    ./modules/nixvim/plugins/lsp/texlab.nix
+  ];
 
-    colorschemes.catppuccin.enable = true;
-    plugins.lualine.enable = true;
-  };
-
-  # Emacs Pakages 
+  # Emacs Pakages
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;  # replace with pkgs.emacs-gtk if desireda
-    
+    package = pkgs.emacs; # replace with pkgs.emacs-gtk if desireda
+
     # Add vterm to the list of extra packages managed by home-manager
-    extraPackages = epkgs: with epkgs; [
-      vterm
-      nix-mode
-      magit
-    ];
+    extraPackages =
+      epkgs: with epkgs; [
+        vterm
+        nix-mode
+        magit
+      ];
 
     # Optional: Add any extra elisp configuration needed for vterm
     extraConfig = ''
@@ -148,21 +182,19 @@
     '';
   };
 
-# readline: https://github.com/nix-community/home-manager/blob/master/modules/programs/readline.nix
+  # readline: https://github.com/nix-community/home-manager/blob/master/modules/programs/readline.nix
   programs.readline = {
     enable = true;
     variables.editing-mode = "vi";
   };
 
-
   programs.zsh = {
     enable = true;
-
 
     # Other zsh options can go here (e.g., enableCompletion, history)
     enableCompletion = true;
     history = {
-        size = 10000;
+      size = 10000;
     };
 
     shellAliases = {
@@ -188,10 +220,7 @@
       # custom = "..."; # Use this for custom themes/plugins (see step 3)
     };
 
-
   };
-  
-  
 
   # Optional: ensure your environment uses zsh
   # home.shellAliases = { ... };

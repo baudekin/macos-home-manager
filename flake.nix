@@ -10,12 +10,17 @@
     };
 
     nixvim = {
-     url = "github:nix-community/nixvim";
-     inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }:
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -24,17 +29,16 @@
       homeConfigurations."bodkin" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
-
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ 
-	  nixvim.homeModules.nixvim
-	  ./home.nix
-	];
+        modules = [
+          nixvim.homeModules.nixvim
+          ./home.nix
+        ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
-	#extraSpecialArgs = { inherit <passthru>; };
+        #extraSpecialArgs = { inherit <passthru>; };
       };
     };
 }
