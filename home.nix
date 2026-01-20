@@ -142,24 +142,24 @@
   #};
   programs.nixvim.enable = true;
   programs.nixvim.imports = [
-    ./cfg/nixvim/nixvim.nix
-    ./cfg/nixvim/config/keybindings.nix
-    ./cfg/nixvim/config/options.nix
-    ./cfg/nixvim/plugins/dashboard.nix
-    ./cfg/nixvim/plugins/lazygit.nix
-    ./cfg/nixvim/plugins/harpoon.nix
-    ./cfg/nixvim/plugins/misc.nix
-    ./cfg/nixvim/plugins/telescope.nix
-    ./cfg/nixvim/plugins/treesitter.nix
-    ./cfg/nixvim/plugins/lsp/lsp.nix
-    ./cfg/nixvim/plugins/lsp/clangd.nix
-    ./cfg/nixvim/plugins/lsp/dap.nix
-    ./cfg/nixvim/plugins/lsp/fmtlint.nix
-    ./cfg/nixvim/plugins/lsp/leanls.nix
-    ./cfg/nixvim/plugins/lsp/lua_ls.nix
-    ./cfg/nixvim/plugins/lsp/nixd.nix
-    ./cfg/nixvim/plugins/lsp/python.nix
-    ./cfg/nixvim/plugins/lsp/texlab.nix
+    ./modules/nixvim/nixvim.nix
+    ./modules/nixvim/config/keybindings.nix
+    ./modules/nixvim/config/options.nix
+    ./modules/nixvim/plugins/dashboard.nix
+    ./modules/nixvim/plugins/lazygit.nix
+    ./modules/nixvim/plugins/harpoon.nix
+    ./modules/nixvim/plugins/misc.nix
+    ./modules/nixvim/plugins/telescope.nix
+    ./modules/nixvim/plugins/treesitter.nix
+    ./modules/nixvim/plugins/lsp/lsp.nix
+    ./modules/nixvim/plugins/lsp/clangd.nix
+    ./modules/nixvim/plugins/lsp/dap.nix
+    ./modules/nixvim/plugins/lsp/fmtlint.nix
+    ./modules/nixvim/plugins/lsp/leanls.nix
+    ./modules/nixvim/plugins/lsp/lua_ls.nix
+    ./modules/nixvim/plugins/lsp/nixd.nix
+    ./modules/nixvim/plugins/lsp/python.nix
+    ./modules/nixvim/plugins/lsp/texlab.nix
   ];
 
   # Emacs Pakages
