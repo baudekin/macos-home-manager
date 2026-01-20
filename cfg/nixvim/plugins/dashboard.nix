@@ -7,7 +7,7 @@
       config = {
         header = [
           "┌───────────────────────────┐"
-          "│   Welcome back, Michael!     │"
+          "│   Welcome back, Michael!  │"
           "└───────────────────────────┘"
         ];
         center = [
