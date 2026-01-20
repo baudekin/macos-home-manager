@@ -1,5 +1,6 @@
 # macos-home-manager
 
+https://www.youtube.com/watch?v=JCeYq72Sko0
 https://mynixos.com/
 https://github.com/nix-darwin/nix-darwin
 https://nixos.org/
