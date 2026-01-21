@@ -1,5 +1,5 @@
 # treesetter.nix
-{ lib, ... }:
+{ ... }:
 {
   plugins.treesitter = {
     enable = true;

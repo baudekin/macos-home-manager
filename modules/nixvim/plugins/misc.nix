@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ ... }:
 {
   plugins = {
     gitsigns = {
@@ -31,23 +31,34 @@
       enable = true;
       settings = {
         options = {
-          theme = "tokyonight";
+          theme = "gruvbox-material";
           icons_enabled = true;
           section_separators = {
-            left = "";
-            right = "";
+            left = "|>";
+            right = "<|";
           };
           component_separators = {
-            left = "";
-            right = "";
+            left = "|>";
+            right = "<|";
           };
         };
       };
     };
   };
 
-  colorschemes.tokyonight = {
+  #  colorschemes.tokyonight = {
+  #    enable = true;
+  #    settings.style = "moon"; # options: "moon", "storm", "night", "day"
+  #  };
+  # https://github.com/sainnhe/gruvbox-material/blob/f5f912fb/colors/gruvbox-material.vim
+  colorschemes.gruvbox-material = {
     enable = true;
-    settings.style = "moon"; # options: "moon", "storm", "night", "day"
+    settings = {
+      enable_bold = 1;
+      enable_italic = 1;
+      foreground = "original";
+      show_eob = 0;
+      transparent_background = 2;
+    };
   };
 }

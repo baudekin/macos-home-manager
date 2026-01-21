@@ -1,5 +1,5 @@
 # options.nix
-{ lib, ... }:
+{ ... }:
 {
   opts = {
     # Basic Settings

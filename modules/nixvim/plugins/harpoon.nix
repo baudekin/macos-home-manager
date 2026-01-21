@@ -1,5 +1,5 @@
 # harpoon.nix
-{ lib, pkgs, ... }:
+{ ... }:
 {
   plugins.harpoon = {
     # https://github.com/ThePrimeagen/harpoon/tree/harpoon2

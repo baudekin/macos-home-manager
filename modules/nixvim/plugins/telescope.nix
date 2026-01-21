@@ -1,5 +1,5 @@
 # telescope.nix
-{ lib, ... }:
+{ ... }:
 {
   plugins.telescope = {
     enable = true;

@@ -1,5 +1,5 @@
 # lazygit.nix
-{ lib, ... }:
+{ ... }:
 {
   plugins.lazygit = {
     enable = true;

@@ -1,5 +1,5 @@
 # keybindings.nix
-{ lib, ... }:
+{ ... }:
 {
   # Keybindings - globals
   globals.mapleader = " ";
