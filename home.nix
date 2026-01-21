@@ -18,8 +18,11 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-    # Moved from nix darwin flake.
+    # Fortran Support
     pkgs.gfortran
+    pkgs.fortran-fpm
+    pkgs.fortls
+    # Moved from nix darwin flake.
     pkgs.lua51Packages.lua
     pkgs.lua51Packages.luarocks
     pkgs.texliveFull
