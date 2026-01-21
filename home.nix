@@ -155,7 +155,7 @@
     ./modules/nixvim/plugins/lsp/lua_ls.nix
     ./modules/nixvim/plugins/lsp/nixd.nix
     ./modules/nixvim/plugins/lsp/python.nix
-    #./modules/nixvim/plugins/lsp/texlab.nix
+    ./modules/nixvim/plugins/lsp/texlab.nix
   ];
 
   # Emacs Pakages
