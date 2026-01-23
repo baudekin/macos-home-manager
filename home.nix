@@ -226,4 +226,5 @@
   # home.sessionVariables = { ... };
 
   # ... other home manager configurations ...
+  programs.nixvim.diagnostic.settings.virtual_text = true;
 }
