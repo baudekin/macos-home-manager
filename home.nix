@@ -18,6 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    # Setup Development enviroments
+    pkgs.devenv
+
     # Fortran Support
     pkgs.gfortran
     pkgs.fortran-fpm
