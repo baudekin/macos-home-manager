@@ -5,14 +5,22 @@
     inlayHints.enable = true;
     servers = {
       # Enable specific servers
-      #bashls.enable = true;
+      bashls = {
+        enable = true;
+        config.command = [
+          "bash-language-server"
+          "start"
+        ];
+        config.filetypes = [
+          "bash"
+          "sh"
+        ];
+      };
       nil_ls = {
         enable = true;
         config.formatting.command = [ "nixpkgs-fmt" ];
       };
-      #jsonls.enable = true;
-      #lua-ls.enable = true;
-      #tsserver.enable = true; # For TypeScript/JavaScript
+      lua-ls.enable = true;
     };
 
     lsp-format.enable = true;
