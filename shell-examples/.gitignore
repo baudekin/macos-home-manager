@@ -1,5 +1,0 @@
-# devenv generated files
-.devenv
-.devenv.flake.nix
-devenv.lock
-devenv.yaml
