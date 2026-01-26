@@ -157,6 +157,7 @@
     ./modules/nixvim/plugins/lsp/clangd.nix
     ./modules/nixvim/plugins/lsp/dap.nix
     ./modules/nixvim/plugins/lsp/fmtlint.nix
+    ./modules/nixvim/plugins/lsp/julials.nix
     ./modules/nixvim/plugins/lsp/leanls.nix
     ./modules/nixvim/plugins/lsp/lua_ls.nix
     ./modules/nixvim/plugins/lsp/nixd.nix
