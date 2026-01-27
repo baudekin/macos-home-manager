@@ -142,28 +142,47 @@
   #    enable = true;
   #    defaultEditor = true;
   #};
-  programs.nixvim.enable = true;
-  programs.nixvim.imports = [
-    ./modules/nixvim/nixvim.nix
-    ./modules/nixvim/config/keybindings.nix
-    ./modules/nixvim/config/options.nix
-    ./modules/nixvim/plugins/dashboard.nix
-    ./modules/nixvim/plugins/lazygit.nix
-    ./modules/nixvim/plugins/harpoon.nix
-    ./modules/nixvim/plugins/misc.nix
-    ./modules/nixvim/plugins/telescope.nix
-    ./modules/nixvim/plugins/treesitter.nix
-    ./modules/nixvim/plugins/lsp/lsp.nix
-    ./modules/nixvim/plugins/lsp/clangd.nix
-    ./modules/nixvim/plugins/lsp/dap.nix
-    ./modules/nixvim/plugins/lsp/fmtlint.nix
-    ./modules/nixvim/plugins/lsp/julials.nix
-    ./modules/nixvim/plugins/lsp/leanls.nix
-    ./modules/nixvim/plugins/lsp/lua_ls.nix
-    ./modules/nixvim/plugins/lsp/nixd.nix
-    ./modules/nixvim/plugins/lsp/python.nix
-    ./modules/nixvim/plugins/lsp/texlab.nix
-  ];
+  programs.nixvim = {
+    enable = true;
+    imports = [
+      ./modules/nixvim/nixvim.nix
+      ./modules/nixvim/config/keybindings.nix
+      ./modules/nixvim/config/options.nix
+      ./modules/nixvim/plugins/dashboard.nix
+      ./modules/nixvim/plugins/lazygit.nix
+      ./modules/nixvim/plugins/harpoon.nix
+      ./modules/nixvim/plugins/misc.nix
+      ./modules/nixvim/plugins/telescope.nix
+      ./modules/nixvim/plugins/treesitter.nix
+      ./modules/nixvim/plugins/vim-slime.nix
+      ./modules/nixvim/plugins/lsp/lsp.nix
+      ./modules/nixvim/plugins/lsp/clangd.nix
+      ./modules/nixvim/plugins/lsp/dap.nix
+      ./modules/nixvim/plugins/lsp/fmtlint.nix
+      ./modules/nixvim/plugins/lsp/julials.nix
+      ./modules/nixvim/plugins/lsp/leanls.nix
+      ./modules/nixvim/plugins/lsp/lua_ls.nix
+      ./modules/nixvim/plugins/lsp/nixd.nix
+      ./modules/nixvim/plugins/lsp/python.nix
+      ./modules/nixvim/plugins/lsp/texlab.nix
+    ];
+
+    # Start tmux with socket name: tmux -L a_socket
+    # Too see tmux active sockets run: lsof -U | grep '^tmux'                                                  ✭ ✈
+    #tmux      16126 bodkin    6u  unix 0x8ae63112004f7c33      0t0      ->0x778f7c5638490ef8
+    #tmux      16128 bodkin    6u  unix 0xe13fb9c47a858f4f      0t0      /private/tmp/tmux-503/a_socket
+    #tmux      16128 bodkin    7u  unix 0x778f7c5638490ef8      0t0      ->0x8ae63112004f7c33
+    # Note our socket is /private/tmp/tmux-503/a_socket
+    # This is the name you use instead of "default" this allows you to have multiple tmux sessing going with
+    # slime slime at once. My command pane setting 1.2.  The first window second pane.
+    #  vim.g.slime_dont_ask_default = 1
+    #  vim.g.slime_default_config = "{\"socket_name\": \"default\", \"target_pane\": \"{last}\"}"
+    #  vim.g.slime_no_mappings = 1;
+    extraConfigLua = ''
+      vim.g.slime_target = "tmux"
+      vim.g.slime_paste_file = "tempname()"
+    '';
+  };
 
   # Emacs Pakages
   programs.emacs = {

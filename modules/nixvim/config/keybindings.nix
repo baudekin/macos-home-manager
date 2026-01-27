@@ -40,18 +40,21 @@
       action = "<cmd>Telescope find_files<CR>";
       options.silent = true;
     }
+
     {
       mode = "n";
       key = "<leader>fg";
       action = "<cmd>Telescope live_grep<CR>";
       options.silent = true;
     }
+
     {
       mode = "n";
       key = "<leader>fb";
       action = "<cmd>Telescope buffers<CR>";
       options.silent = true;
     }
+
     {
       mode = "n";
       key = "<leader>fh";
@@ -64,6 +67,41 @@
       mode = "n";
       key = "<leader>lg";
       action = "<cmd>LazyGit<CR>";
+      options.silent = true;
+    }
+
+    # Clear search highlights
+    {
+      mode = "n";
+      key = "<leader>nh";
+      action = "<cmd>nohlsearch<CR>";
+      options.silent = true;
+    }
+
+    #send visual selection
+    #xmap <leader>s <Plug>SlimeRegionSend
+    #{
+    #      mode = "x";
+    #      key = "<leader>s";
+    #      action = " <Plug>SlimeRegionSend";
+    #      options.silent = true;
+    #    }
+
+    #"send based on motion or text object
+    #nmap <leader>s <Plug>SlimeMotionSend
+    #    {
+    #      mode = "n";
+    #      key = "<leader>s";
+    #      action = " <Plug>SlimeMotionSend";
+    #      options.silent = true;
+    #    }
+
+    #    #"send line
+    #    #nmap <leader>ss <Plug>SlimeLineSend
+    {
+      mode = "n";
+      key = "<leader>ss";
+      action = "<cmd>SlimeSendCurrentLine<CR>";
       options.silent = true;
     }
 
