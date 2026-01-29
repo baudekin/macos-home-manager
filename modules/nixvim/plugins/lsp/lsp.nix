@@ -16,10 +16,6 @@
           "sh"
         ];
       };
-      nil_ls = {
-        enable = true;
-        config.formatting.command = [ "nixpkgs-fmt" ];
-      };
       lua-ls.enable = true;
       build-vim.enable = true;
     };
