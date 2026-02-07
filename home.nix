@@ -132,6 +132,7 @@
   # This makes it hard to use Nix
   home.sessionPath = [
     "/Users/bodkin/.juliaup/bin"
+    "/Users/bodkin/.local/bin"
   ];
 
   # Let Home Manager install and manage itself.
