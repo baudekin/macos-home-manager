@@ -20,6 +20,8 @@
   home.packages = [
     # Setup Development enviroments
     pkgs.devenv
+    pkgs.curl
+    pkgs.wget
 
     # Fortran Support
     pkgs.gfortran
