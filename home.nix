@@ -38,7 +38,7 @@
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
-    pkgs.brave
+    #pkgs.brave
 
     #pkgs.emacs
     # Required by Emacs
