@@ -19,6 +19,7 @@
     blink-ripgrep.enable = true;
     blink-cmp = {
       enable = true;
+      version = "1.*";
       setupLspCapabilities = true;
 
       settings = {
