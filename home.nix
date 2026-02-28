@@ -22,6 +22,7 @@
     pkgs.devenv
     pkgs.curl
     pkgs.wget
+    pkgs.fzf
 
     # Fortran Support
     pkgs.gfortran
@@ -152,6 +153,7 @@
       ./modules/nixvim/config/keybindings.nix
       ./modules/nixvim/config/options.nix
       ./modules/nixvim/plugins/dashboard.nix
+      ./modules/nixvim/plugins/blink-cmp.nix
       ./modules/nixvim/plugins/lazygit.nix
       ./modules/nixvim/plugins/harpoon.nix
       ./modules/nixvim/plugins/misc.nix
