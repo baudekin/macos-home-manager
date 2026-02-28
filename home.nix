@@ -20,6 +20,9 @@
   home.packages = [
     # Setup Development enviroments
     pkgs.devenv
+    pkgs.curl
+    pkgs.wget
+    pkgs.fzf
 
     # Fortran Support
     pkgs.gfortran
@@ -36,7 +39,7 @@
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
-    pkgs.brave
+    #pkgs.brave
 
     #pkgs.emacs
     # Required by Emacs
@@ -132,6 +135,7 @@
   # This makes it hard to use Nix
   home.sessionPath = [
     "/Users/bodkin/.juliaup/bin"
+    "/Users/bodkin/.local/bin"
   ];
 
   # Let Home Manager install and manage itself.
@@ -149,6 +153,7 @@
       ./modules/nixvim/config/keybindings.nix
       ./modules/nixvim/config/options.nix
       ./modules/nixvim/plugins/dashboard.nix
+      ./modules/nixvim/plugins/blink-cmp.nix
       ./modules/nixvim/plugins/lazygit.nix
       ./modules/nixvim/plugins/harpoon.nix
       ./modules/nixvim/plugins/misc.nix
