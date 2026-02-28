@@ -15,3 +15,7 @@ Fortran: https://rudrab.github.io/vimf90/
 Julia Nvim setup: https://github.com/arashshakeri/NeoJulia/blob/main/init.lua
 
 This enabled me to get blink-cmp installed: https://www.youtube.com/watch?v=GKIxgCcKAq4&t=3s and https://github.com/elythh/nixvim/tree/new.
+
+nix flake update
+sudo darwin-rebuild switch --flake ~/.config/nix-darwin#macosm1
+home-manager switch --flake ~/.config/home-manager/#bodkin
