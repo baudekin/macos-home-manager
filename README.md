@@ -13,3 +13,5 @@ https://nix-community.github.io/nixvim/search/?option_scope=0&option=plugins.cmp
 Fortran: https://github.com/wassup05/fortran.nvim
 Fortran: https://rudrab.github.io/vimf90/
 Julia Nvim setup: https://github.com/arashshakeri/NeoJulia/blob/main/init.lua
+
+This enabled me to get blink-cmp installed: https://www.youtube.com/watch?v=GKIxgCcKAq4&t=3s and https://github.com/elythh/nixvim/tree/new.
