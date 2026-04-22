@@ -17,7 +17,7 @@
         ];
       };
       lua-ls.enable = true;
-      build-vim.enable = true;
+      #build-vim.enable = true;
     };
 
     lsp-format.enable = true;

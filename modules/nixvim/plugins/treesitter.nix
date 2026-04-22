@@ -16,12 +16,16 @@
       "html"
       "javascript"
       "julia"
+      "lean"
       "lua"
       "python"
       "nix"
       "typescript"
       "vim"
       "vimdoc"
+      "json"
+      "toml"
+      "yaml"
     ];
   };
 }

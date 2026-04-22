@@ -31,7 +31,10 @@
     # Moved from nix darwin flake.
     pkgs.lua51Packages.lua
     pkgs.lua51Packages.luarocks
+    #pkgs.languagetool
     pkgs.texliveFull
+    pkgs.texlab
+    pkgs.fasttext
     pkgs.tmux
 
     # Darwin version of ghostty
@@ -58,6 +61,10 @@
 
     # NodeJS
     pkgs.nodejs
+    pkgs.nodePackages.npm
+    pkgs.nodePackages.typescript-language-server
+    pkgs.tree-sitter
+    pkgs.ltex-ls
 
     # Commandline tool
     pkgs.readline
@@ -126,6 +133,8 @@
   #  /etc/profiles/per-user/bodkin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     JULIA_EDITOR = "nvim";
     JULIA_NUM_THREADS = 8;
     VIRTUAL_ENV_DISABLE_PROMPT = 1;
@@ -140,6 +149,12 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Java
+  programs.java = {
+    enable = true;
+    package = pkgs.openjdk17;
+  };
 
   # Neovim
   #programs.neovim = {
@@ -164,12 +179,14 @@
       ./modules/nixvim/plugins/lsp/clangd.nix
       ./modules/nixvim/plugins/lsp/dap.nix
       ./modules/nixvim/plugins/lsp/fmtlint.nix
+      #./modules/nixvim/plugins/lsp/harperls.nix
       ./modules/nixvim/plugins/lsp/julials.nix
       ./modules/nixvim/plugins/lsp/leanls.nix
       ./modules/nixvim/plugins/lsp/lua_ls.nix
       ./modules/nixvim/plugins/lsp/nixd.nix
       ./modules/nixvim/plugins/lsp/python.nix
       ./modules/nixvim/plugins/lsp/texlab.nix
+      ./modules/nixvim/plugins/lsp/ltex.nix
     ];
 
     # Start tmux with socket name: tmux -L a_socket

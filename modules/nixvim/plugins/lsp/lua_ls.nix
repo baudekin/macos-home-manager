@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 {
-  lsp.servers.lua_ls = {
+  lsp.servers.lua-ls = {
     enable = true;
     config = {
       cmd = [ "${lib.getExe pkgs.lua-language-server}" ];
