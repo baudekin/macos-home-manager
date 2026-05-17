@@ -22,7 +22,13 @@
     pkgs.devenv
     pkgs.curl
     pkgs.wget
+
     pkgs.fzf
+    pkgs.viu
+    pkgs.chafa
+    pkgs.ueberzugpp
+    pkgs.pngpaste
+    pkgs.obsidian
 
     # Fortran Support
     pkgs.gfortran
@@ -31,6 +37,12 @@
     # Moved from nix darwin flake.
     pkgs.lua51Packages.lua
     pkgs.lua51Packages.luarocks
+    pkgs.lua51Packages.jsregexp
+
+    # Rust setup
+    pkgs.rustc
+    pkgs.cargo
+
     #pkgs.languagetool
     pkgs.texliveFull
     pkgs.texlab
@@ -42,12 +54,13 @@
     # Media Viewer Mocos Version
     pkgs.vlc-bin
 
-    #pkgs.brave
+    pkgs.php
 
     #pkgs.emacs
     # Required by Emacs
     pkgs.cmake # vterm requires cmake to build its C module
     # pkgs.libvterm # The underlying library Not supported on MacOs
+    pkgs.ninja
 
     pkgs.discord
 
@@ -82,8 +95,17 @@
         requests
         # Add other packages here
         pynvim
+        pip
       ]
     ))
+
+    # go lang setup
+    pkgs.go
+    pkgs.gopls
+    pkgs.gotools
+    pkgs.golangci-lint
+
+    pkgs.clang-tools
 
     # Font setup
     pkgs.fontconfig
