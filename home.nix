@@ -272,6 +272,7 @@
 
     initContent = ''
       bindkey -v
+      eval $(luarocks --tree=/Users/bodkin/luarocks path)
     '';
 
     oh-my-zsh = {
