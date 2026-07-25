@@ -22,6 +22,8 @@
     pkgs.devenv
     pkgs.curl
     pkgs.wget
+    pkgs.tree
+    pkgs.ollama
 
     pkgs.fzf
     pkgs.viu
